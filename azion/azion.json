@@ -1,0 +1,42 @@
+{
+  "name": "Uploadazion",
+  "bucket": "",
+  "preset": "javascript",
+  "env": "production",
+  "prefix": "20241129212221",
+  "not-first-run": true,
+  "function": {
+    "id": 32996,
+    "name": "__DEFAULT__",
+    "file": ".edge/worker.js",
+    "args": "azion/args.json",
+    "instance-id": 31734,
+    "instance-name": "__DEFAULT__",
+    "cache-id": 191335
+  },
+  "application": {
+    "id": 1732911131,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 1732916836,
+    "name": "Uploadazion",
+    "domain_name": "aslklvx3e9.map.azionedge.net",
+    "url": "https://aslklvx3e9.map.azionedge.net"
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": [],
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 328736,
+        "name": "Execute Edge Function",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": []
+}
