@@ -21,21 +21,179 @@ function main(event) {
    
   return new Response(`
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Hello World</title>
-      <script>
-        ${htmx}
-      </script>
-    </head>
-    <body>
-      <h1>Hello World</h1>
-      <button hx-get="/messages" hx-target="#message">Load Message</button>
-      <p id="message"></p>
-    </body>
-    </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<style>*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url( https://raw.githubusercontent.com/shivamgupta-git/images/refs/heads/main/background.png);
+    background-position: center;
+    background-size: cover;
+    padding: 0 7%;
+    color: #fff;
+}
+
+nav{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 50px;
+    cursor: pointer;
+}
+
+nav ul{
+    flex: 1;
+
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+nav .btn{
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.content{
+    margin-top: 12%;
+
+}
+
+.content h1{
+    font-size: 88px;
+    margin-bottom: 15px;
+}
+
+.content h1 span{
+    color: rgb(209, 135, 38);
+}
+
+.content p{
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.content .btn{
+    display: inline-block;
+    margin-top: 30px;
+    background: rgb(209, 135, 38);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+}
+
+.coin-list{
+    right: 10%;
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.coin{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 0 15px;
+    color:rgb(209, 135, 38);
+    border: 1px solid #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+
+.coin img{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.coin h3{
+    color: #fff;
+    margin-bottom: 5px;
+    
+}</style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <img src=" https://raw.githubusercontent.com/shivamgupta-git/images/refs/heads/main/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Market</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">White Papers</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <a href="#" class="btn">EN</a>
+        </nav>
+
+<div class="content">
+    <h1>BUY & <br>SELL <span> Crypto</span></h1>
+    <p>World's biggest Cryptocurrency exchange available on web<br> as well as mobile phone.</p>
+    <a href="#" class="btn">EXPLORE MORE</a>
+</div>
+
+  <div class="coin-list">
+    <div class="coin">
+        <img src=" https://raw.githubusercontent.com/shivamgupta-git/images/refs/heads/main/bitcoin.png">
+        <div>
+            <h3>
+               $45664<span id="bitcoin"></span>
+            </h3>
+            <p>Bitcoin</p>
+        </div>
+    </div>
+    <div class="coin">
+        <img src=" https://raw.githubusercontent.com/shivamgupta-git/images/refs/heads/main/ethereum.png">
+        <div>
+            <h3>
+                $87345<span id="ethereum"></span>
+            </h3>
+            <p>Ethereum</p>
+        </div>
+    </div>
+    <div class="coin">
+        <img src=" https://raw.githubusercontent.com/shivamgupta-git/images/refs/heads/main/dogecoin.png">
+        <div>
+            <h3>
+                $89456<span id="dogecoin"></span>
+            </h3>
+            <p>Dogecoin</p>
+        </div>
+    </div>
+    
+  </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
   `, {
     headers: {
       'Content-Type': 'text/html; charset=utf-8'
